@@ -2,12 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: 'login.component.html',
-  styleUrls: ['login.component.scss']
+  selector: 'app-pages-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss'],
 })
-
-export class LoginComponent {
+export class RegisterComponent implements OnInit {
   backgroundNumber = 1;
   fullScreen = false;
   validateForm: FormGroup;
@@ -16,9 +15,13 @@ export class LoginComponent {
     this.validateForm = fb.group({
       userName: ['admin@mediatec.org', [Validators.required, Validators.minLength(4)]],
       password: ['cleanui', [Validators.required]],
+      confirm: ['', [Validators.required]],
     });
   }
 
+  ngOnInit(): void {
+    this.validateForm = this.fb.group({});
+  }
 
   changeBackground(): void {
     if (this.backgroundNumber === 5) {

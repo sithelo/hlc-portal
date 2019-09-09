@@ -1,85 +1,110 @@
-<div class="title login-heading">
-  <h1>
-    <strong>WELCOME TO HOSPITAL LIAISON COMMITTEE - JOHANNESBURG</strong>
-  </h1>
-  <!-- <p>
-    Pluggable enterprise-level angular application framework.
-    <br />
-    An excellent front-end solution for web applications built upon Ant Design and Angular.
-    <br />
-    Credentials for testing purposes - <strong>admin@mediatec.org</strong> /
-    <strong>cleanui</strong>
-  </p> -->
-</div>
-<div class="block">
-  <div class="row">
-    <div class="col-xl-12">
-      <div class="inner">
-        <div class="form">
-          <h4 class="text-uppercase">
-            <strong>Please log in</strong>
-          </h4>
-          <br />
-          <form nz-form [nzLayout]="'vertical'" [formGroup]="form" (ngSubmit)="submitForm()" role="form">
-            <nz-form-item>
-              <nz-form-label nzFor="email">Email</nz-form-label>
-              <nz-form-control>
-                <nz-input-group [nzPrefix]="prefixUser">
-                  <input nz-input id="email" formControlName="email">
-                </nz-input-group>
-                <nz-form-explain *ngIf="email.dirty && email.errors">
-                  Please input your e-mail address
-                </nz-form-explain>
-              </nz-form-control>
-            </nz-form-item>
-            <nz-form-item>
-              <nz-form-label nzFor="password">Password</nz-form-label>
-              <nz-form-control>
-                <nz-input-group [nzPrefix]="prefixLock">
-                  <input type="password" nz-input id="password" formControlName="password">
-                </nz-input-group>
-                <nz-form-explain *ngIf="password.dirty && password.errors">
-                  Please input your e-mail address
-                </nz-form-explain>
-              </nz-form-control>
-            </nz-form-item>
-            <div>
-              <label nz-checkbox>
-                Remember me
-              </label>
-              <a href routerLink="/user/forgot" class="login-form-forgot pull-right utils__link--blue utils__link--underlined">Forgot password</a>
-            </div>
-            <div class="form-actions">
-              <button nz-button nzType="primary" class="width-150 mr-3">
-                Sign in
-              </button>
-              <span class="register-link">
-                <a href="javascript: void(0);" class="utils__link--blue utils__link--underlined">Register</a>
-                if you don&#39;t have an account
-              </span>
-            </div>
-            <div class="form-group">
-              <p>Use another service to Sign In</p>
-              <div class="mt-2">
-                <a href="javascript: void(0);" class="btn btn-icon mr-2">
-                  <i class="icmn-facebook"></i>
-                </a>
-                <a href="javascript: void(0);" class="btn btn-icon mr-2">
-                  <i class="icmn-google"></i>
-                </a>
-                <a href="javascript: void(0);" class="btn btn-icon mr-2">
-                  <i class="icmn-windows"></i>
-                </a>
-                <a href="javascript: void(0);" class="btn btn-icon mr-2">
-                  <i class="icmn-twitter"></i>
-                </a>
-              </div>
-            </div>
-          </form>
+
+  <div class="content">
+    <div class="promo">
+      <h1 class="mb-3">Welcome to Hospital Liaison Committee - Johannesburg</h1>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+        Ipsum has been the industry&#39;s standard dummy text ever since the 1500s.
+      </p>
+    </div>
+    <div class="formWrapper">
+      <div class="form">
+      <p class="formTitle">Please log in</p>
+      <form nz-form [nzLayout]="'vertical'" [formGroup]="validateForm" (ngSubmit)="submitForm()" role="form">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="username">Username</nz-form-label>
+          <nz-form-control>
+            <nz-input-group [nzPrefix]="prefixUser">
+              <input formControlName="userName" id="username" nz-input placeholder="Username">
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="password">Password</nz-form-label>
+          <nz-form-control>
+            <nz-input-group [nzPrefix]="prefixLock">
+              <input formControlName="password" nz-input placeholder="Password" id="password">
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <label nz-checkbox >
+              <span>Remember me</span>
+            </label>
+            <a href="javascript: void(0);" class="login-form-forgot pull-right text-primary">Forgot password</a>
+          </nz-form-control>
+        </nz-form-item>
+        <div class="form-actions">
+          <button nz-button nzType="primary" class="login-form-button mr-3">
+            Sign in
+          </button>
+          <span class="register-link">
+            <a href="javascript: void(0);" class="text-primary utils__link--underlined">
+              Register
+            </a>
+            if you don&#39;t have account
+          </span>
+        </div>
+        <div class="form-group">
+          <p>Use another service to Log In</p>
+          <div class="mt-2">
+            <a href="javascript: void(0);" class="btn btn-icon mr-2">
+              <i class="icmn-facebook"></i>
+            </a>
+            <a href="javascript: void(0);" class="btn btn-icon mr-2">
+              <i class="icmn-google"></i>
+            </a>
+            <a href="javascript: void(0);" class="btn btn-icon mr-2">
+              <i class="icmn-windows"></i>
+            </a>
+            <a href="javascript: void(0);" class="btn btn-icon mr-2">
+              <i class="icmn-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+      <div class="sidebar">
+        <p class="sidebarTitle">HLC Meeting</p>
+        <p class="sidebarSubTitle">August 2019</p>
+        <div class="sidebarContent">
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+            Ipsum has been the industry&#39;s standard dummy text ever since the 1500s.
+          </p>
+          <p>
+            Ipsum has been the industry&#39;s standard dummy text ever since the 1500s.
+          </p>
+        </div>
+        <div class="sidebarFooter">
+          <span>
+            <i class="icmn-location mr-3"></i>
+            New York, USA
+          </span>
         </div>
       </div>
     </div>
   </div>
-</div>
+  <!-- <footer class="footer">
+    <ul class="footerNav">
+      <li>
+        <a href="javascript: void(0);">Terms of Use</a>
+      </li>
+      <li>
+        <a href="javascript: void(0);">Compliance</a>
+      </li>
+      <li>
+        <a href="javascript: void(0);">Confidential Information</a>
+      </li>
+      <li>
+        <a href="javascript: void(0);">Support</a>
+      </li>
+      <li>
+        <a href="javascript: void(0);">Contacts</a>
+      </li>
+    </ul>
+  </footer> -->
+<!-- </section> -->
 <ng-template #prefixUser><i nz-icon type="user"></i></ng-template>
 <ng-template #prefixLock><i nz-icon type="lock"></i></ng-template>

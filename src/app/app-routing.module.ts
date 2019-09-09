@@ -6,10 +6,12 @@ import { LoginComponent } from './login/login.component';
 import { LayoutLoginComponent } from './layouts/Login/login.component';
 import { AppPreloader } from './app-routing-loader';
 import { LayoutsModule } from './layouts/layouts.module';
+import { ForgotComponent } from './forgot/forgot.component';
+import { RegisterComponent } from './register/register.component';
 // import { AppPreloader } from 'src/app/app-routing-loader'
 
 
-const COMPONENTS = [LoginComponent];
+const COMPONENTS = [LoginComponent, ForgotComponent, RegisterComponent];
 
 const routes: Routes = [
   {
@@ -17,7 +19,8 @@ const routes: Routes = [
     component: LayoutLoginComponent,
     children: [
       { path: 'login', component: LoginComponent, data: { title: 'Login' } },
-    //  { path: 'forgot', component: ForgotComponent, data: { title: 'Restore Password' } },
+      { path: 'forgot', component: ForgotComponent, data: { title: 'Restore Password' } },
+      { path: 'register', component: RegisterComponent, data: { title: 'Register new user' } },
     ],
   },
 
@@ -27,7 +30,7 @@ const routes: Routes = [
   imports: [
     SharedModule,
     RouterModule.forRoot(routes, {
-      useHash: true,
+      useHash: false,
       preloadingStrategy: AppPreloader,
     }),
     LayoutsModule,
@@ -36,4 +39,4 @@ const routes: Routes = [
   declarations: [...COMPONENTS],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
