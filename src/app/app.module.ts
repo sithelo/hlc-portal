@@ -4,6 +4,8 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { IconDefinition } from '@ant-design/icons-angular';
 import * as AllIcons from '@ant-design/icons-angular/icons';
 import { NZ_ICONS } from 'ng-zorro-antd';
+import { StoreModule } from '@ngrx/store';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
@@ -27,7 +29,7 @@ registerLocaleData(localeEn, 'en');
  */
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition
-}
+};
 const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key]);
 
 @NgModule({
@@ -38,6 +40,12 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     BrowserModule,
     CoreModule,
     HttpClientModule,
+     /**
+     * NgRx Store
+     */
+    StoreModule.forRoot(reducers, { metaReducers }),
+    StoreRouterConnectingModule.forRoot(),
+
     AppRoutingModule,
      ],
   providers: [
