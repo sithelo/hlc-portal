@@ -35,10 +35,9 @@ export const initialState: SettingState = {
     isSquaredBorders: false,
     isFixedWidth: false,
     isMenuShadow: true,
-  }),
 };
 
-export function reducer(state = initialState, action: actions.AllSettingActions): object {
+export function reducer(state = initialState, action: actions.AllSettingActions): SettingState {
   switch (action.type) {
     case actions.SET_STATE:
       const key = Object.keys(action.payload)[0];
