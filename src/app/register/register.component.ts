@@ -30,7 +30,9 @@ export class RegisterComponent implements OnInit {
       this.backgroundNumber += 1;
     }
   }
+  submitForm(): void {
 
+  }
   changeScreen(): void {
     this.fullScreen = !this.fullScreen;
   }
