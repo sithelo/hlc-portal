@@ -1,6 +1,3 @@
-udo: required
-addons:
-  chrome: stable
 language: node_js
 node_js:
   - "12.6.0"
@@ -11,16 +8,9 @@ before_script:
   - npm install -g @angular/cli
 script:
   - npm install
-  - ng build --prod
-after_success:
-  - firebase deploy --token $FIREBASE_TOKEN --non-interactive # firebase deploy after angular-cli build
-
-notifications:
-  email:
-    on_failure: change
-    on_success: change
-# deploy:
-#   skip_cleanup: true
-#   provider: firebase
-#   token:
-#     secure: $FIREBASE_TOKEN
+  - npm run build
+deploy:
+  skip_cleanup: true
+  provider: firebase
+  token:
+    secure: $FIREBASE_TOKEN
