@@ -12,5 +12,7 @@ script:
 deploy:
   skip_cleanup: true
   provider: firebase
+  on:
+    branch: "ngrx"
   token:
     secure: $FIREBASE_TOKEN
