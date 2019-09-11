@@ -42,9 +42,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     BrowserModule,
     CoreModule,
     HttpClientModule,
-     /**
-     * NgRx Store
-     */
+     // NgRx Store
     StoreModule.forRoot({}, { metaReducers }),
     StoreRouterConnectingModule.forRoot(),
 
